@@ -18,6 +18,7 @@ resource sqlServer 'Microsoft.Sql/servers@2021-02-01-preview' existing = {
   name: sqlServerName
 }
 
+// ch3 trigger
 // https://docs.microsoft.com/en-us/azure/templates/microsoft.authorization/roleassignments?tabs=bicep
 resource sqlContributorRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-08-01-preview' = {
   name: guid(resourceGroup().id, sqlServer.id, userAssignedManagedIdentityId, contributorRoleDefinitionId)
